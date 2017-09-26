@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-char * LongestCommonPrefix(char **str , int n)
+char * LongestPrefix(char **str , int l)
 {
     int i, j;
     char *ptr = str[0];
@@ -12,10 +12,10 @@ char * LongestCommonPrefix(char **str , int n)
     char *out = new char[i];
     
     for( i = 0; ;i++){
-        for( j = 1; j < n ;j++)
+        for( j = 1; j < l ;j++)
             if(*ptr != str[j][i])
                 break;
-        if(j == n)
+        if(j == l)
             out[i] = *ptr++;
         else
             break;
@@ -26,9 +26,9 @@ char * LongestCommonPrefix(char **str , int n)
 
 int main()
 {
-    char *str1[] = {"shash","shank","shashank","sha"};
+    char *str1[] = {"mano","manojk","manojku","ma"};
     char *str2[] = {"ab","abc","def","defgh","sha"};
-    cout << LongestCommonPrefix(str1 ,4)<<endl;
-    cout << LongestCommonPrefix(str2 ,5)<<endl;
+    cout << LongestPrefix(str1 ,4)<<endl;
+    cout << LongestPrefix(str2 ,5)<<endl;
     return 0;
 }
